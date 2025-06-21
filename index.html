@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="resources/symbol.svg">
+    <script src="historias.js" defer></script>
+    <script src="scripts.js"></script>
+    <title>Hades</title>
+</head>
+<body>
+    
+    <!----------------------------------------- Contenedor de video ------------------------------------------------>
+    <div class="video-container">
+        <video id="video-fondo" autoplay loop muted>
+            <source src="resources/fondofuego.mp4" type="video/mp4">
+            Tu navegador no soporta el video.
+        </video>
+    </div>
+    <!--------------------------------------- FIN Contenedor de video ------------------------------------------------>
+
+
+
+    <!------------------------------------- SIDEBAR ------------------------------------------------------------->
+    <div class="sidebar visible">
+        <div class="perfil-info">
+
+            <img src="resources/imghades.png" class="perfil-avatar">
+            <h3 class="perfil-nombre"><img src="resources/symbol.png" class="icon-svg2"> Hades <img src="resources/symbol.png" class="icon-svg2"></h3>
+            <h4 style="color: rgb(99, 99, 99); transform: translateY(-90%);">Santiago</h4>
+            <div class="redes">
+                <h3 style="color: white;"><img src="resources/greekpilar2.png" class="icon-svg2"> Mis redes <img src="resources/greekpilar2.png" class="icon-svg2"></h3>
+                <a href="https://www.instagram.com/mckancr/" target="_blank" title="Instagram"><img src="resources/Instagram_icon.png" class="icon"></a>
+                <a href="https://www.youtube.com/@invHadess" target="_blank" title="YouTube"><img src="resources/youtube.png" class="icon"></a>
+                <a href="https://x.com/InvHades01" target="_blank" title="Twitter/X"><img src="resources/tuitericon.webp" class="icon"></a>
+                <a href="https://www.wattpad.com/user/invHades" target="_blank" title="Wattpad"><img src="resources/wattpadicon.png" class="icon"></a>
+                <a href="https://github.com/invHades" target="_blank" title="GitHub"><img src="resources/githubicon.png" class="icon"></a>
+                <a href="https://steamcommunity.com/id/GodOfUnderworldHades/" target="_blank" title="Steam"><img src="resources/steam-svgrepo-com.svg" class="icon"></a>
+            </div>
+
+        </div>
+
+        <div class="sections">
+            <h3 style="color: white;"><img src="resources/greekpilar2.png" class="icon-svg2"> Secciones <img src="resources/greekpilar2.png" class="icon-svg2"></h3>
+            <a href="#info"><img src="resources/info.png" class="icon-svg"> <b>Info</b> </a> <br>
+            <a href="#galeria"><img src="resources/gallery.png" class="icon-svg"> <b>Galeria</b> </a> <br>
+            <a href="#youtubeVideos"><img src="resources/youtube.png" class="icon-svg"> <b>Videos de YouTube</b> </a> <br>
+            <a href="#wattpad"><img src="resources/wattpadicon.png" class="icon-svg"> <b>Wattpad</b> </a> <br>
+        </div>
+
+    </div>
+    <div class="sidebar-toggle" onclick="toggleSidebar()">☰</div>
+    <!------------------------------------- FIN SIDEBAR ------------------------------------------------------------->
+
+
+    <!--------------------------------------- MAJOR ------------------------------------------------>
+    <div class="major">
+        <div class="fondopilares">
+            <img src="resources/pilaresricosniggas.png" alt="Fondo de pilares">
+        </div>
+        <!--------------------------------------- INFO ------------------------------------------------>
+        <div class="portfolio-panel" id="info">
+            <h3 style="color: orange; font-size: 2rem;">¿Quién soy?</h3> 
+            <hr style="width: 100%;">
+            <p class="bio-text">Soy Santiago. A veces programador, escritor, casi siempre con la cabeza en otro mundo. Me inspiro en mitos griegos, animes, música de todos los universos, y ese caos de ideas que me define.
+            Lo que hago — ya sea escribir, codificar o dibujar. Lo hago porque me gusta, porque me nace, y porque me divierte construir cosas que tienen un poco de mí en cada línea.
+            </p>
+            
+            <ul class="datos-personales">
+                <li><b><img src="resources/bow.png" class="icon-svg2"> Hobbies:</b> Programar, crear jueguitos, escribir historias locas en Wattpad, subir edits a YouTube, cantar a todo pulmon cuando tengo casa sola, hablar con mi gato o conmigo mismo y romper el CSS sin querer.</li> <br>
+                <li><b><img src="resources/bow.png" class="icon-svg2">  Nivel de caos creativo:</b> Altisimo y siempre en llamas. Me encanta crear cosas (por si no te diste cuenta) ya sea programando, escribiendo o editando, crear cualquier cosa que me haga feliz, me de satisfaccion o me de risa.</li> <br>
+                <li><b><img src="resources/bow.png" class="icon-svg2">  Dato random:</b> Tengo muchos proyectos personales sin terminar. (un juego en unity pixel-art, varias historias en Wattpad, dibujos en hojas, comics dibujados sin terminar, paginas y programas)</li>
+            </ul>
+
+            <blockquote class="frase-papu">"Mi esencia no nace del orden, sino del caos creativo de mis ideas." <br> — yo mismo, probablemente</blockquote>
+        </div>
+<!--------------------------------------- FIN INFO ------------------------------------------------>
+
+
+        <div class="portfolio-panel" id="galeria">
+  <h3 style="color: orange;">Galería personal</h3><hr style="width: 100%;">
+
+  <div class="filtros">
+    <button onclick="filtrarGaleria('todo')">Todo</button>
+    <button onclick="filtrarGaleria('gato')">Gato</button>
+    <button onclick="filtrarGaleria('dibujo')">Dibujos</button>
+    <button onclick="filtrarGaleria('setup')">Setup</button>
+    <button onclick="filtrarGaleria('random')">Random</button>
+  </div>
+
+  <div class="carrusel">
+
+    <!------------------------GATO------------------------->
+    <div class="slide" data-categoria="gato">
+      <img src="resources/galeria/gatogod.jpg" onclick="abrirImagen(this.src)" alt="Mi gato">
+      <p>Mi gato como todo un Dios</p>
+    </div>
+     <div class="slide" data-categoria="gato">
+      <img src="resources/galeria/gatohomero.jpg" onclick="abrirImagen(this.src)" alt="Mi gato">
+      <p>Mi gato sentado en la cama (como un Dios) y un homero diciendo hola de fondo</p>
+    </div>
+    <div class="slide" data-categoria="gato">
+      <img src="resources/galeria/gatonaturaleza.jpg" onclick="abrirImagen(this.src)" alt="Mi gato">
+      <p>Mi gato acostado en el patio de mi antigua casa (acostado como todo un Dios)</p>
+    </div>
+
+    <!-----------------------------DIBUJO------------------------------>
+    <div class="slide" data-categoria="dibujo">
+      <img src="resources/galeria/jiren.jpg" onclick="abrirImagen(this.src)" alt="Ilustración original">
+      <p>Uno de mis dibujos mejores dibujos (de hace años y si este es el mejor entonces imaginate como estara el peor)</p>
+    </div>
+    <div class="slide" data-categoria="dibujo">
+      <img src="resources/galeria/arte.jpg" onclick="abrirImagen(this.src)" alt="Ilustración original">
+      <p>No es un dibujo como tal, pero igualmente esto es arte. La casa representa como me gustaria que fuera mi casa en el futuro, la comida representa que me gustaria comer saludable asi, los animales que aparecen porque me encantaria tener alguno de ellos (o todos), el poster de Darth Vader lego sinceramente no lose, quizas porque me encanta Darth Vader y quisiera poder comprarme posters de el, luego Mickey Mouse esta alli volando sin razon alguna</p>
+    </div>
+
+    <!------------------------SETUP--------------------------------->
+    <div class="slide" data-categoria="setup">
+      <img src="resources/galeria/setup.jpg" onclick="abrirImagen(this.src)" alt="Mi setup">
+      <p>Mi humilde setup para crear caos</p>
+    </div>
+    <div class="slide" data-categoria="setup">
+      <img src="resources/galeria/pc.jpg" onclick="abrirImagen(this.src)" alt="Mi PC">
+      <p>Mi pc, TEAMO MIVIDA</p>
+    </div>
+    
+    <!------------------------------RANDOM----------------------------->
+     <div class="slide" data-categoria="random">
+      <img src="resources/galeria/a (9).png" onclick="abrirImagen(this.src)" alt="Mi pinguino">
+      <p>Mi pinguino alias "Dios Facha" el cual cree en un club penguin creado por la comunidad luego de que el original cerrara</p>
+    </div>
+    <div class="slide" data-categoria="random">
+      <img src="resources/galeria/a (8).png" onclick="abrirImagen(this.src)" alt="Mi igloo">
+      <p>Mi igloo en el club penguin, una locura total, sinceramente creo que es el mejor de todo el juego.</p>
+    </div>
+    <div class="slide" data-categoria="random">
+      <img src="resources/galeria/teamorani.jpg" onclick="abrirImagen(this.src)" alt="Posters">
+      <p>Posters que tengo, pero quiero resaltar a la hermosa Ranni a la cual le rezo siempre</p>
+    </div>
+    <div class="slide" data-categoria="random">
+      <img src="resources/galeria/optimus (1).jpg" onclick="abrirImagen(this.src)" alt="Cartuchera Optimus Prime">
+      <p>Mi gran compañero Optimus Prime el cual me ha acompañado desde 2013 masomenos, hasta ahora, y seguira por mucho tiempo mas. Te quiero tanto cartuchera de Optimus Prime</p>
+    </div>
+
+  </div>
+</div>
+
+
+    <!--------------------------------------- YOUTUBE ------------------------------------------------>
+    <div class="portfolio-panel" id="youtubeVideos">
+        <div class="youtube-box">
+            <iframe width="100%" height="600" src="https://www.youtube.com/embed/kYNw8q9VfJM?si=OMQzT5kB4wOl6t2A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div class="video-selector">
+                <img src="https://img.youtube.com/vi/SfedWPQ0rWI/0.jpg" data-video="SfedWPQ0rWI">
+                <img src="https://img.youtube.com/vi/tWkbl8KJrWA/0.jpg" data-video="tWkbl8KJrWA">
+                <img src="https://img.youtube.com/vi/kYNw8q9VfJM/0.jpg" data-video="kYNw8q9VfJM">
+                <img src="https://img.youtube.com/vi/RXlCTRwkNhk/0.jpg" data-video="RXlCTRwkNhk">
+                <img src="https://img.youtube.com/vi/EhRODP-jyh4/0.jpg" data-video="EhRODP-jyh4">
+                <img src="https://img.youtube.com/vi/t2sIooWc4cM/0.jpg" data-video="t2sIooWc4cM">
+                <img src="https://img.youtube.com/vi/-KyC_f8m7W4/0.jpg" data-video="-KyC_f8m7W4">
+                <img src="https://img.youtube.com/vi/x-BuVvV_kNg/0.jpg" data-video="x-BuVvV_kNg">
+                <img src="https://img.youtube.com/vi/ZPe7VkYwv-w/0.jpg" data-video="ZPe7VkYwv-w">
+                <img src="https://img.youtube.com/vi/c15ZVw_-FnU/0.jpg" data-video="c15ZVw_-FnU">
+                <img src="https://img.youtube.com/vi/t5TZ3uDxgUE/0.jpg" data-video="t5TZ3uDxgUE">
+            </div>
+        </div>
+    </div>
+     <!--------------------------------------- FIN YOUTUBE ------------------------------------------------>
+
+
+        <!--------------------------------------- WATTPAD ------------------------------------------------>
+        <div class="portfolio-panel" id="wattpad">
+                <h3 style="color: orange;"><img src="resources/wattpadicon.png" class="icon-svg">Historias Wattpad</h3><br><h4 style="color: orange;">Hay muchas mas en proceso...</h4><hr style="width: 100%;">
+                <div class="wattpad-box">
+                    <div id="historiaCatalogo" class="catalogo-list">
+                    <!-- Historias se llenan con JS -->
+                    </div>
+
+                    <div id="lector" class="lector-box" style="display: none;">
+                        <button id="modoPantallaCompleta" style="width: 50px;"><img src="resources/fullscreenicon.svg" class="icon-svg"></button>
+                        <button onclick="volverAlCatalogo()" style="width: 50px;">←</button>
+                        <h4 id="historiaTitulo"></h4>
+                        <p id="historiaContenido"></p>
+                        <div id="navegacionCapitulos">
+                            <button id="anteriorCap" disabled>&#8592; Anterior</button>
+                            <button id="siguienteCap">Siguiente &#8594;</button>
+                        </div>
+                    </div>
+                </div>
+         </div>
+         <!--------------------------------------- FIN WATTPAD ------------------------------------------------>
+
+         
+
+    </div>
+    <!--------------------------------------- FIN MAJOR ------------------------------------------------>
+<div class="imagen-overlay" id="imagenOverlay" onclick="cerrarImagen()">
+  <img id="imagenGrande" src="">
+</div>
+
+</body>
+</html>
