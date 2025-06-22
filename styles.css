@@ -14,7 +14,6 @@ html, body {
   overflow-x: hidden;
   overflow-y: auto;
   background: rgba(0, 0, 0, 0.5);
-  animation: fuego-movimiento 1s infinite alternate;
 }
 
 body {
@@ -22,6 +21,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   justify-content: center;
+  animation: fuego-movimiento 1s infinite alternate;
 }
 
 button{
@@ -576,6 +576,8 @@ a:hover{
   gap: 1rem;
   overflow-x: auto;
   padding-bottom: 1rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
 }
 
 .playlist-card {
@@ -588,6 +590,7 @@ a:hover{
   flex-direction: column;
   max-height: 70vh;
   margin-top: 5px;
+  scroll-snap-align: start;
 }
 
 .playlist-cabecera {
@@ -707,6 +710,13 @@ a:hover{
     z-index: -1;
   }
   
+
+  body {
+      animation: none !important;
+      box-shadow:
+        0 0 25px 8px orange,
+        inset 0 0 20px 5px orange !important;
+    }
 
 
 
