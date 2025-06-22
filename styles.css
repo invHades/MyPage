@@ -75,6 +75,8 @@ button:hover{
   height: 100%;
   object-fit: cover;
 }
+
+
 /* -------------------- VIDEO DE FONDO -------------------- */
 .video-container {
   position: fixed;
@@ -120,6 +122,13 @@ button:hover{
     z-index: 100;
     transform: translateX(0);
 }
+.sidebar h5{
+  font-size: 1rem;
+  color: white;
+  background: black;
+  border-radius: 20px;
+  border: 2px solid red;
+}
 .sidebar a{
     color: orange;
     text-decoration: none;
@@ -130,16 +139,35 @@ a:hover{
     transition: 0.3s;
     transform: scale(1.2,1.2);
 }
+/*-----FOTO PERFIL CON CIRCULO DE FUEGO-----*/
+.avatar-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  transform: translateY(20%);
+}
 
 .perfil-avatar {
-  transform: translateX(5%);
-  width: 60%;
-  height: 60%;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   object-fit: cover;
-  margin-right: 10px;
-  border: 2px solid red;
+  position: relative;
+  z-index: 1;
 }
+
+.fuego-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 115%;
+  height: 140%;
+  transform: translate(-50%, -60%);
+  z-index: 2;
+  pointer-events: none;
+}
+/*-----FIN FOTO PERFIL CON CIRCULO DE FUEGO-----*/
 .perfil-nombre {
     font-size: 2rem;
   color: rgb(192, 0, 0);
@@ -155,7 +183,7 @@ a:hover{
     transform: scale(1.2,1.2);
 }
 .redes, .sections{
-    margin-top: 30px;
+    margin-top: 20px;
     border: 2px solid red;
     border-radius: 10px;
     background:#0f0f0f;
@@ -179,10 +207,34 @@ a:hover{
   width: 40px;
   vertical-align: middle;
 }
-.youtube-box,
+
 .wattpad-box {
   display: flex;
   flex-direction: column;
+}
+.youtube-box{
+  flex-grow: 1;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+
+}
+.youtube-fixed {
+  display: flex;
+  flex-direction: column;
+  height: 90vh; 
+  overflow: hidden;
+}
+
+.youtubeHeader{
+  flex-shrink: 0; 
+}
+.youtube-box iframe {
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: none;
+  border-radius: 10px;
 }
 
 .video-selector img {
@@ -206,6 +258,8 @@ a:hover{
   box-shadow: 0 0 15px darkred;
   margin: 3%;
   position: relative; 
+  overflow-y: auto;
+  max-height: 90vh;
 }
 .video-selector {
   display: flex;
@@ -215,7 +269,7 @@ a:hover{
   max-width: 100%;
   overflow-y: hidden;
 }
-/*--------------------------------seccion de wattpad--------------------------------------------*/
+/*--------------------------------SECCION DE WATTPAD--------------------------------------------*/
 .portfolio-panel#wattpad {
   display: flex;
   flex-direction: column;
@@ -353,9 +407,19 @@ a:hover{
 .datos-personales li {
   margin: 0.5rem 0;
 }
+.info-top {
+  flex-shrink: 0; 
+}
 
-.frase-papu {
-  margin-top: auto;
+.info-scroll {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding-right: 0.5rem; 
+}
+
+.frase-papu{
+  flex-shrink: 0;
+  margin: 0;
   padding-left: 1rem;
   border-left: 3px solid crimson;
   color: orange;
@@ -363,14 +427,25 @@ a:hover{
   font-size: 1.2rem;
   animation: fuegoTexto 1s infinite alternate;
 }
-#info{
-    display: flex;
-    flex-direction: column;
-    background-color: #0f0f0fea;
-    overflow-y: auto;
+
+.frase-papu:hover{
+  transform: scale(1.01,1.01);
+  transition: 0.3s;
+  cursor: pointer;
 }
+#info {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-height: 600px; 
+  background-color: #0f0f0fea;
+  overflow: hidden;
+  padding: 1rem;
+  gap: 1rem;
+}
+
 /*-------------------------------- GALERIA -------------------------------*/
-.carrusel {
+.carrusel, .opinionContainer {
   display: flex;
   gap: 1rem;
   overflow-x: auto;
@@ -379,7 +454,7 @@ a:hover{
   -webkit-overflow-scrolling: touch;
 }
 
-.slide {
+.slide, .opinion {
   flex: 0 0 300px;
   max-height: 400px;
   scroll-snap-align: start;
@@ -396,7 +471,7 @@ a:hover{
     transform: scale(1.1,1.1);
     transition: 0.3s;
 }
-.slide img {
+.slide img, .opinion img {
   max-width: 100%;
   height: auto;
   max-height: 300px;
@@ -447,8 +522,174 @@ a:hover{
   box-shadow: 0 0 25px red;
   transition: transform 0.3s ease;
 }
+/*--------------------------- FOTO CON FRASE CENTRADA -------------------------------*/
+.frase-con-imagen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.600);
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+.frase-img {
+  max-width: 100%;
+  width: 250px;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.frase-epica {
+  font-style: italic;
+  color: orange;
+  font-size: 1.3rem;
+  border-left: 4px solid crimson;
+  padding-left: 1rem;
+  animation: fuegoTexto 1s infinite alternate;
+}
+
+
+
+/*--------------------------- LISTA DE REPRODUCCION -------------------------------*/
+
+.portfolio-panel {
+  padding: 1rem;
+  background-color: rgba(0,0,0,0.6);
+  border-radius: 15px;
+  box-shadow: 0 0 15px darkred;
+  max-height: 90vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.playlist-titulo {
+  text-align: center;
+  color: orange;
+}
+
+.playlist-fila {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+}
+
+.playlist-card {
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+  padding: 1rem;
+  flex: 0 0 300px;
+  display: flex;
+  flex-direction: column;
+  max-height: 70vh;
+  margin-top: 5px;
+}
+
+.playlist-cabecera {
+  flex-shrink: 0;
+  color: orange;
+  text-align: center;
+}
+
+.playlist-scroll {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cancion p {
+  margin: 0;
+  color: #eee;
+}
+.cancion{
+  margin: 5px;
+}
+.cancion iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+  border: none;
+}
+.yt-portada {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.548);
+  transition: transform 0.2s ease;
+}
+
+.yt-portada:hover {
+  transform: scale(1.03);
+}
+/*-------------------------------MODAL OPINIONS-------------------------------------*/
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding: 2rem;
+  left: 0; top: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  background-color: rgba(0,0,0,0.9);
+  backdrop-filter: blur(4px);
+}
+
+.modal-content {
+  margin: auto;
+  max-width: 800px;
+  background: #111;
+  border-radius: 10px;
+  padding: 2rem;
+  color: white;
+  text-align: left;
+}
+
+.modal-img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.modal-texto p , .opinionText p{
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.cerrar-modal {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 2rem;
+  color: crimson;
+  cursor: pointer;
+}
+.opinionText{
+  color: white;
+}
 /*--------------------------- ESTILOS PARA MOVILES -------------------------------*/
 @media (max-width: 768px) {
+  .opinion{
+    padding: 1.3rem;
+  }
+  .frase-con-imagen{
+    margin: 5%;
+  }
     .fondopilares{
         display: none;
     }

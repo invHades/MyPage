@@ -11,6 +11,8 @@
 </head>
 <body>
     
+  <audio id="clickSound" src="resources/alert.wav" preload="auto"></audio>
+
     <!----------------------------------------- Contenedor de video ------------------------------------------------>
     <div class="video-container">
         <video id="video-fondo" autoplay loop muted>
@@ -26,29 +28,33 @@
     <div class="sidebar visible">
         <div class="perfil-info">
 
-            <img src="resources/imghades.png" class="perfil-avatar">
+            <div class="avatar-wrapper">
+              <img src="resources/imghades.png" class="perfil-avatar">
+              <img src="resources/firecircle.gif" class="fuego-overlay">
+            </div>
+
             <h3 class="perfil-nombre"><img src="resources/symbol.png" class="icon-svg2"> Hades <img src="resources/symbol.png" class="icon-svg2"></h3>
-            <h4 style="color: rgb(99, 99, 99); transform: translateY(-90%);">Santiago</h4>
             <div class="redes">
-                <h3 style="color: white;"><img src="resources/greekpilar2.png" class="icon-svg2"> Mis redes <img src="resources/greekpilar2.png" class="icon-svg2"></h3>
-                <a href="https://www.instagram.com/mckancr/" target="_blank" title="Instagram"><img src="resources/Instagram_icon.png" class="icon"></a>
-                <a href="https://www.youtube.com/@invHadess" target="_blank" title="YouTube"><img src="resources/youtube.png" class="icon"></a>
-                <a href="https://x.com/InvHades01" target="_blank" title="Twitter/X"><img src="resources/tuitericon.webp" class="icon"></a>
-                <a href="https://www.wattpad.com/user/invHades" target="_blank" title="Wattpad"><img src="resources/wattpadicon.png" class="icon"></a>
-                <a href="https://github.com/invHades" target="_blank" title="GitHub"><img src="resources/githubicon.png" class="icon"></a>
-                <a href="https://steamcommunity.com/id/GodOfUnderworldHades/" target="_blank" title="Steam"><img src="resources/steam-svgrepo-com.svg" class="icon"></a>
+                <h3 style="color: white;"><img src="resources/greekpilar2.png" class="icon-svg2"> Social webs <img src="resources/greekpilar2.png" class="icon-svg2"></h3>
+                <a href="https://www.instagram.com/mckancr/" target="_blank" title="Instagram" onclick="reproducirSonido()" ><img src="resources/Instagram_icon.png" class="icon"></a>
+                <a href="https://www.youtube.com/@invHadess" target="_blank" title="YouTube" onclick="reproducirSonido()" ><img src="resources/youtube.png" class="icon"></a>
+                <a href="https://x.com/InvHades01" target="_blank" title="Twitter/X" onclick="reproducirSonido()" ><img src="resources/tuitericon.webp" class="icon"></a>
+                <a href="https://www.wattpad.com/user/invHades" target="_blank" title="Wattpad" onclick="reproducirSonido()" ><img src="resources/wattpadicon.png" class="icon"></a>
+                <a href="https://github.com/invHades" target="_blank" title="GitHub" onclick="reproducirSonido()" ><img src="resources/githubicon.png" class="icon"></a>
+                <a href="https://steamcommunity.com/id/GodOfUnderworldHades/" target="_blank" title="Steam" onclick="reproducirSonido()" ><img src="resources/steam-svgrepo-com.svg" class="icon"></a>
             </div>
 
         </div>
 
         <div class="sections">
-            <h3 style="color: white;"><img src="resources/greekpilar2.png" class="icon-svg2"> Secciones <img src="resources/greekpilar2.png" class="icon-svg2"></h3>
-            <a href="#info"><img src="resources/info.png" class="icon-svg"> <b>Info</b> </a> <br>
-            <a href="#galeria"><img src="resources/gallery.png" class="icon-svg"> <b>Galeria</b> </a> <br>
-            <a href="#youtubeVideos"><img src="resources/youtube.png" class="icon-svg"> <b>Videos de YouTube</b> </a> <br>
-            <a href="#wattpad"><img src="resources/wattpadicon.png" class="icon-svg"> <b>Wattpad</b> </a> <br>
+            <h3 style="color: white;"><img src="resources/greekpilar2.png" class="icon-svg2"> Sections <img src="resources/greekpilar2.png" class="icon-svg2"></h3>
+            <a href="#info" onclick="reproducirSonido()" ><img src="resources/info.png" class="icon-svg"> <b>Info</b> </a> <br>
+            <a href="#galeria" onclick="reproducirSonido()" ><img src="resources/gallery.png" class="icon-svg"> <b>Galeria</b> </a> <br>
+            <a href="#youtubeVideos" onclick="reproducirSonido()" ><img src="resources/youtube.png" class="icon-svg"> <b>Videos de YouTube</b> </a> <br>
+            <a href="#wattpad" onclick="reproducirSonido()" ><img src="resources/wattpadicon.png" class="icon-svg"> <b>Wattpad</b> </a> <br>
+            <a href="#opinions" onclick="reproducirSonido()" ><img src="resources/thought.png" class="icon-svg"> <b>Opinions</b> </a> <br>
+            <a href="#playlist" onclick="reproducirSonido()" ><img src="resources/music.png" class="icon-svg"> <b>playlist</b> </a> <br>
         </div>
-
     </div>
     <div class="sidebar-toggle" onclick="toggleSidebar()">☰</div>
     <!------------------------------------- FIN SIDEBAR ------------------------------------------------------------->
@@ -56,29 +62,45 @@
 
     <!--------------------------------------- MAJOR ------------------------------------------------>
     <div class="major">
+
+      <!---------------FONDO DE PILARES --------------->
         <div class="fondopilares">
             <img src="resources/pilaresricosniggas.png" alt="Fondo de pilares">
         </div>
         <!--------------------------------------- INFO ------------------------------------------------>
         <div class="portfolio-panel" id="info">
+          <div class="info-top">
             <h3 style="color: orange; font-size: 2rem;">¿Quién soy?</h3> 
             <hr style="width: 100%;">
-            <p class="bio-text">Soy Santiago. A veces programador, escritor, casi siempre con la cabeza en otro mundo. Me inspiro en mitos griegos, animes, música de todos los universos, y ese caos de ideas que me define.
-            Lo que hago — ya sea escribir, codificar o dibujar. Lo hago porque me gusta, porque me nace, y porque me divierte construir cosas que tienen un poco de mí en cada línea.
+          </div>
+
+          <div class="info-scroll">
+            <p class="bio-text" id="bio-text">
             </p>
-            
+             
             <ul class="datos-personales">
                 <li><b><img src="resources/bow.png" class="icon-svg2"> Hobbies:</b> Programar, crear jueguitos, escribir historias locas en Wattpad, subir edits a YouTube, cantar a todo pulmon cuando tengo casa sola, hablar con mi gato o conmigo mismo y romper el CSS sin querer.</li> <br>
                 <li><b><img src="resources/bow.png" class="icon-svg2">  Nivel de caos creativo:</b> Altisimo y siempre en llamas. Me encanta crear cosas (por si no te diste cuenta) ya sea programando, escribiendo o editando, crear cualquier cosa que me haga feliz, me de satisfaccion o me de risa.</li> <br>
-                <li><b><img src="resources/bow.png" class="icon-svg2">  Dato random:</b> Tengo muchos proyectos personales sin terminar. (un juego en unity pixel-art, varias historias en Wattpad, dibujos en hojas, comics dibujados sin terminar, paginas y programas)</li>
+                <li><b><img src="resources/bow.png" class="icon-svg2">  Dato random:</b> Tengo muchos proyectos personales sin terminar. (un juego en unity pixel-art, varias historias en Wattpad, dibujos en hojas, comics dibujados sin terminar, paginas y programas)</li> <br>
+                <li><b><img src="resources/bow.png" class="icon-svg2">  Dato random2:</b> En un dia de aburrimiento hice un server de discord porque si (con muchos canales, bots, roles, permisos, etc) te puedes unir clickeando <a href="https://discord.gg/RaRRGre8By" target="_blank" style="animation: fuegoTexto 1s infinite alternate; color: orange;" onclick="reproducirSonido()" >aqui</a> mismo para que veas la basura de server que hice xd (por cierto hay un bot de Maluma)</li><br>
+                <li><b><img src="resources/bow.png" class="icon-svg2"> Mi filosofia de vida:</b> Siempre digo que el humor es lo mejor que existe y deberiamos tomarnos la vida y todo con un poco mas de humor, ya que si vivimos amargados vamos a sufrir mas. La vida a veces es muy cruel como para tomarla con seriedad. <p style="animation: fuegoTexto 1s infinite alternate;">"El humor es el relámpago que parte la oscuridad de lo solemne; sin el, la vida sería una larga noche sin estrellas."</p></li> <br>
+                <li><b><img src="resources/bow.png" class="icon-svg2">  Dato random3:</b> Soy agnostico. No confirmo ni niego la existencia de un Dios, ya que nunca lo he visto, oido, sentido, etc por mi propia cuenta, pero que yo no pueda ver, sentir, etc algo, no quiere decir que no exista. </li><br>
             </ul>
-
-            <blockquote class="frase-papu">"Mi esencia no nace del orden, sino del caos creativo de mis ideas." <br> — yo mismo, probablemente</blockquote>
+          </div>
+            <hr style="width: 100%;">
+            <blockquote class="frase-papu">“My essence is not born from order, but from the creative chaos of my ideas.”  — me, probably</blockquote>
         </div>
 <!--------------------------------------- FIN INFO ------------------------------------------------>
 
 
-        <div class="portfolio-panel" id="galeria">
+ <section class="frase-con-imagen">
+  <img src="resources/zenyatta.webp" alt="Zenyatta" class="frase-img">
+  <blockquote class="frase-epica">"Amid discord, we will find tranquility." — Zenyatta</blockquote>
+</section>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+
+
+<!---------------------------------SECCION GALERIA------------------------------------------->
+<div class="portfolio-panel" id="galeria">
   <h3 style="color: orange;">Galería personal</h3><hr style="width: 100%;">
 
   <div class="filtros">
@@ -114,6 +136,14 @@
       <img src="resources/galeria/arte.jpg" onclick="abrirImagen(this.src)" alt="Ilustración original">
       <p>No es un dibujo como tal, pero igualmente esto es arte. La casa representa como me gustaria que fuera mi casa en el futuro, la comida representa que me gustaria comer saludable asi, los animales que aparecen porque me encantaria tener alguno de ellos (o todos), el poster de Darth Vader lego sinceramente no lose, quizas porque me encanta Darth Vader y quisiera poder comprarme posters de el, luego Mickey Mouse esta alli volando sin razon alguna</p>
     </div>
+     <div class="slide" data-categoria="dibujo">
+      <img src="resources/galeria/naruto (1).jpg" onclick="abrirImagen(this.src)" alt="Ilustración original">
+      <p> Dibujo de Naruto modo Rikudo Sennin (esta un poco raro pero tampoco quedo tan mal)</p>
+    </div>
+     <div class="slide" data-categoria="dibujo">
+      <img src="resources/galeria/naruto (2).jpg" onclick="abrirImagen(this.src)" alt="Ilustración original">
+      <p> Dibujo de Naruto modo Sennin (sin terminar desde hace años, pobresito)</p>
+    </div>
 
     <!------------------------SETUP--------------------------------->
     <div class="slide" data-categoria="setup">
@@ -142,15 +172,27 @@
       <img src="resources/galeria/optimus (1).jpg" onclick="abrirImagen(this.src)" alt="Cartuchera Optimus Prime">
       <p>Mi gran compañero Optimus Prime el cual me ha acompañado desde 2013 masomenos, hasta ahora, y seguira por mucho tiempo mas. Te quiero tanto cartuchera de Optimus Prime</p>
     </div>
+    <div class="slide" data-categoria="random">
+      <img src="resources/galeria/fransisko (1).jpg" onclick="abrirImagen(this.src)" alt="Franciskonsida">
+      <p>Este es un Francisco (muñeco de un compañero) el cual lo hice en 2019, y a pesar de su mal estado aun lo sigo teniendo y me sigue acompañando con su sabiduria (en su pecho con un marcador fluor decia "Grove st 4 Life" pero como se ve ahora ya ni se puede leer)</p>
+    </div>
 
   </div>
 </div>
+<!---------------------------------FIN SECCION GALERIA------------------------------------------->
 
+  <section class="frase-con-imagen">
+  <img src="resources/Zenyatta-full.webp" alt="Zenyatta" class="frase-img">
+  <blockquote class="frase-epica">"It takes a hundred times to learn, a thousand times to understand." — Zenyatta</blockquote>
+</section> 
 
     <!--------------------------------------- YOUTUBE ------------------------------------------------>
-    <div class="portfolio-panel" id="youtubeVideos">
+    <div class="portfolio-panel youtube-fixed" id="youtubeVideos">
+      <div class="youtubeHeader">
+        <h3 style="color: orange;"><img src="resources/youtube.png" class="icon-svg"> <b>Mis videos de YouTube</b></h3><hr style="width: 100%;">
+      </div>
         <div class="youtube-box">
-            <iframe width="100%" height="600" src="https://www.youtube.com/embed/kYNw8q9VfJM?si=OMQzT5kB4wOl6t2A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe  src="https://www.youtube.com/embed/kYNw8q9VfJM?si=OMQzT5kB4wOl6t2A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             <div class="video-selector">
                 <img src="https://img.youtube.com/vi/SfedWPQ0rWI/0.jpg" data-video="SfedWPQ0rWI">
                 <img src="https://img.youtube.com/vi/tWkbl8KJrWA/0.jpg" data-video="tWkbl8KJrWA">
@@ -168,6 +210,11 @@
     </div>
      <!--------------------------------------- FIN YOUTUBE ------------------------------------------------>
 
+<section class="frase-con-imagen">
+  <img src="resources/lightningmcqueen2.webp" alt="Lightning McQueen" class="frase-img">
+  <blockquote class="frase-epica">"Speed. I am speed. One winner, forty-two losers. I eat losers for breakfast." — Lightning McQueen</blockquote>
+</section> 
+    
 
         <!--------------------------------------- WATTPAD ------------------------------------------------>
         <div class="portfolio-panel" id="wattpad">
@@ -191,12 +238,463 @@
          </div>
          <!--------------------------------------- FIN WATTPAD ------------------------------------------------>
 
-         
+         <section class="frase-con-imagen">
+            <img src="resources/milena.png" alt="Milena" class="frase-img">
+            <blockquote class="frase-epica">“Humor is the lightning that shatters the darkness of solemnity; without it, life would be a long night without stars.” — Hades</blockquote>
+          </section> 
+
+         <!--------------------------------------- OPINIONS ------------------------------------------------>
+         <div class="portfolio-panel" id="opinions">
+          <h3 style="color: orange;"> Top opiniones </h3>
+          <hr style="width: 100%;">
+
+          <div class="opinionContainer">
+            <div class="opinion">
+              <img src="resources/DeathNote.jpg">
+              <div class="opinionText">
+              <p>Death Note el mejor anime de la puta historia chaval. Para mí, no es solo un anime: es una obra maestra que roza la perfección narrativa. Su historia es una locura fascinante, un laberinto de moralidad retorcida tan bien construido que te atrapa desde el primer episodio y no te suelta ni cuando termina. La trama está escrita con una precisión quirúrgica; cada episodio deja esa sensación adictiva de “necesito ver el siguiente ya”.</p> 
+              <p>El duelo entre Light Yagami (Kira) y L es, sin dudas, uno de los enfrentamientos intelectuales más memorables en la historia del anime. No se pelean con puños ni poderes sobrenaturales al uso: su batalla es mental, estratégica, elegante... un verdadero festín para quienes amamos los juegos de ingenio. Ver cómo ambos personajes se desafían, se anticipan y se manipulan es como ver a dos dioses jugando ajedrez con las vidas de los demás.</p>
+              <p>Y qué decir de los openings. Ambos son obras de arte por derecho propio, cada uno reflejando una etapa emocional y simbólica de la historia. Desde la oscuridad elegante del primero hasta la locura caótica y visceral del segundo, acompañan a la perfección el descenso de Light hacia algo más grande —y más peligroso— que un simple humano con un cuaderno.</p>
+              <p>Sí, reconozco que después de la muerte de L el ritmo cambia y la emoción inicial se desvanece un poco. Pero aún así, el anime conserva su magnetismo. La historia nunca se vuelve aburrida, solo diferente. Y aunque personalmente creo que Kira tenía todo para ganar y que su caída fue más decisión de guion que consecuencia lógica... eso no cambia mi aprecio. Death Note sigue siendo, para mí, el mejor anime jamás creado.</p>
+              <p>De hecho, no exagero cuando digo que lo he visto más de diez veces a lo largo de mi vida, y sé que lo volveré a ver muchas veces más. Porque hay algo en su oscuridad, en su inteligencia, en su estilo... que me hace volver a él cada vez que necesito recordar por qué me enamoré del anime en primer lugar.</p>
+              </div>
+            </div>
+
+            <div class="opinion">
+              <img src="resources/eldenring.webp">
+              <div class="opinionText">
+                <p>Elden Ring el mejor juego de la puta historia chaval. No es solo un videojuego; es una experiencia sensorial, emocional y hasta espiritual. Desde el primer paso que das en Las Tierras Intermedias, queda claro que estás entrando en un mundo que fue tallado con devoción y locura. La dirección artística es tan majestuosa que cualquier rincón, por más sombrío o devastado que esté, tiene una belleza melancólica capaz de quitarte el aliento. Literalmente podés pausar el juego en cualquier momento, sacar una captura y tener un fondo de pantalla que podría estar colgado en una galería de arte digital. Así de profundo es su nivel visual.</p>
+                <p>El apartado sonoro es otra maravilla aparte: las melodías orquestales te envuelven como una sinfonía de tragedia, gloria y misterio. Cada nota, cada ambiente, cada susurro del viento aporta a la inmersión total. No es solo música de fondo, es una narrativa paralela que te dice cosas que el juego no necesita decir con palabras.</p>
+                <p>Y en cuanto al gameplay... es desafiante, sí, pero increíblemente justo y gratificante. Cada victoria cuesta, pero cada vez que vencés a un jefe monumental sentís que creciste no solo como jugador, sino como persona. Esa sensación de superación que ofrece Elden Ring es incomparable.</p>
+                <p>La historia es densa, críptica y hermosa. No te la da servida: tenés que buscarla, interpretarla, armarla como un rompecabezas onírico. Pero una vez que empezás a entenderla, se transforma en una epopeya de traición, redención, ambición y eternidad.</p>
+                <p>Por todo esto, no tengo dudas al decir que para mí, Elden Ring es el mejor videojuego de todos los tiempos. No porque lo diga la crítica o los premios, sino porque logró algo que muy pocos logran: me marcó. Se quedó conmigo después de apagar la consola. Y eso, para mí, lo convierte en algo trascendente.</p>
+              </div>
+            </div>
+
+            <div class="opinion">
+              <img src="resources/got.jpg">
+              <div class="opinionText">
+                <p>Game Of Thrones la nejor serie de la puta historia chaval. Game of Thrones no es solo una serie: es un fenómeno narrativo que redefinió el arte de contar historias en televisión. Desde sus primeros minutos te atrapa con una intro inolvidable —una sinfonía de engranajes y mapas que ya anticipa que lo que estás por ver es un viaje complejo, épico y absolutamente envolvente. Cada reino, cada muro, cada bosque está diseñado con una belleza y realismo que te hace olvidar que estás viendo ficción. Su ambientación es sencillamente majestuosa</p>
+                <p>Pero lo que realmente eleva a Game of Thrones por encima del resto es su desarrollo de personajes. Nadie es puro, nadie es intocable, nadie está completamente a salvo. Es un mundo de fantasía, sí, pero uno donde la crudeza del destino se siente más real que en muchas historias realistas. Ver cómo los personajes evolucionan —algunos hacia la redención, otros hacia la oscuridad— es una experiencia emocional intensa y a veces devastadora.</p>
+                <p>Los giros argumentales son legendarios. No importa cuán noble sea un personaje, cuán importante parezca: en Westeros, el destino puede cambiar con el filo de una espada, y eso mantiene la tensión en cada episodio. “Cuando jugás al juego de tronos, ganas o mueres”... y es imposible saber cuándo va a pasar.</p>
+                <p>Cómo olvidar los momentos épicos que quedan tatuados en la memoria. Cuando Daenerys pronuncia “Dracarys” con esa mirada de fuego contenido, no es solo una orden: es una declaración de poder, de justicia —o a veces, de venganza. Esos momentos hacen que se te erice la piel como si estuvieras ahí, respirando el mismo aire que los dragones.</p>
+                <p>Y entre todos los personajes que cruzan espadas y juramentos en Game of Thrones, hay uno cuya evolución me marcó particularmente: Jaime Lannister. Al comienzo, parecía el arquetipo perfecto del villano arrogante: hermoso, letal, despiadado… y capaz de empujar a un niño desde una torre para proteger su secreto. Pero con el paso del tiempo —y sobre todo tras perder su mano y cruzar caminos con Brienne— Jaime empieza a desmoronarse por dentro, y en ese derrumbe nace algo más humano. Empieza a cuestionarse, a abrirse, a reconstruirse como alguien que ya no quiere ser solo “el Matarreyes”, sino algo más. Algo digno.</p>
+                <p>Lo fascinante es que, incluso con ese cambio, nunca deja de ser Jaime: fiel a su código, a sus contradicciones… y especialmente, fiel a Cersei. A pesar de todo lo que vivió, del crecimiento, del amor silencioso que supo cultivar con Brienne, al final regresa a su hermana. No porque sea débil, sino porque, para bien o para mal, ella es parte irrompible de lo que lo define. Y su muerte, en ese abrazo final bajo los escombros, lejos de redimirlo o condenarlo, lo cierra como lo que siempre fue: un hombre marcado por la gloria, el amor y la tragedia.</p>
+                <p>Por todo esto y más, no tengo dudas al decir que Game of Thrones es, para mí, la mejor serie de la historia. No solo por lo que cuenta, sino por cómo lo cuenta. Porque incluso cuando termina, su impacto sigue ardiendo como el aliento de Drogon sobre las ruinas de una corona rota.</p>
+              </div>
+            </div>
+
+          </div>
+         </div>
+         <!--------------------------------------- FIN OPINIONS ------------------------------------------------>
+
+         <section class="frase-con-imagen">
+            <img src="resources/lightyagami.png" alt="Light Yagami (Kira)" class="frase-img">
+            <blockquote class="frase-epica">"Las personas no pueden ser perfectas, todos crean sus propias mentiras." — Light Yagami (Kira)</blockquote>
+          </section>  
+
+         <!--------------------------------------- LISTA REPRODUCCION ------------------------------------------------>
+
+         <div class="portfolio-panel" id="playlist">
+            <h3 class="playlist-titulo"><img src="resources/music.png" class="icon-svg"> <b>Top canciones que mas me gustan y paso escuchando (solo las mejores 3, porque si pongo todas me muero de viejo)</b></h3>
+          <hr style="width: 100%;">
+
+            <div class="playlist-fila">
+              <!-- Tarjeta: Michael Jackson -->
+              <div class="playlist-card">
+                <div class="playlist-cabecera">
+                  <h4>Canciones de Michael Jackson</h4>
+                  <hr>
+                </div>
+                <div class="playlist-scroll">
+                  <div class="cancion">
+                    <p>1: “Slave to the Rhythm”</p>
+                    <a href="https://www.youtube.com/watch?v=MuTgX_A52Eo" target="_blank" rel="noopener">
+                      <img src="https://img.youtube.com/vi/MuTgX_A52Eo/maxresdefault.jpg" class="yt-portada">
+                    </a>
+                  </div>
+                   <div class="cancion">
+                    <p>2: “Leave me alone”</p>
+                    <a href="https://www.youtube.com/watch?v=dQ6NeSOWUZw&pp=ygUebWljaGFlbCBqYWNrc29uIGxlYXZlIG1lIGFsb25l" target="_blank" rel="noopener">
+                      <img src="https://img.youtube.com/vi/dQ6NeSOWUZw/maxresdefault.jpg" class="yt-portada">
+                    </a>
+                  </div>
+                  <div class="cancion">
+                    <p>3: “Chicago”</p>
+                    <a href="https://www.youtube.com/watch?v=Y_8mUx4VOmo" target="_blank" rel="noopener">
+                      <img src="https://img.youtube.com/vi/Y_8mUx4VOmo/maxresdefault.jpg" class="yt-portada">
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tarjeta: Aespa-->
+              <div class="playlist-card">
+                <div class="playlist-cabecera">
+                  <h4>Canciones de aespa</h4>
+                  <hr>
+                </div>
+                <div class="playlist-scroll">
+                  <div class="cancion">
+                    <p>1: “Armageddon”</p>
+                    <a href="https://www.youtube.com/watch?v=nFYwcndNuOY" target="_blank" rel="noopener">
+                      <img src="https://img.youtube.com/vi/nFYwcndNuOY/maxresdefault.jpg" class="yt-portada">
+                    </a>
+                  </div>
+                   <div class="cancion">
+                    <p>2: “Spicy”</p>
+                    <a href="https://www.youtube.com/watch?v=Os_heh8vPfs" target="_blank" rel="noopener">
+                      <img src="https://img.youtube.com/vi/Os_heh8vPfs/maxresdefault.jpg" class="yt-portada">
+                    </a>
+                  </div>
+                  <div class="cancion">
+                    <p>3: “Next Level”</p>
+                    <a href="https://www.youtube.com/watch?v=4TWR90KJl84" target="_blank" rel="noopener">
+                      <img src="https://img.youtube.com/vi/4TWR90KJl84/maxresdefault.jpg" class="yt-portada">
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+
+              <!-- Tarjeta: TWICE -->
+              <div class="playlist-card">
+                <div class="playlist-cabecera">
+                  <h4>Canciones de TWICE</h4>
+                  <hr>
+                </div>
+                <div class="playlist-scroll">
+                  <div class="cancion">
+                    <p>1: “Set Me Free”</p>
+                    <a href="https://www.youtube.com/watch?v=w4cTYnOPdNk" target="_blank" rel="noopener">
+                      <img src="https://img.youtube.com/vi/w4cTYnOPdNk/maxresdefault.jpg" class="yt-portada">
+                    </a>
+                  </div>
+                  <div class="cancion">
+                    <p>2: “The Feels”</p>
+                    <a href="https://www.youtube.com/watch?v=f5_wn8mexmM" target="_blank" rel="noopener">
+                      <img src="https://img.youtube.com/vi/f5_wn8mexmM/maxresdefault.jpg" class="yt-portada">
+                    </a>
+                  </div>
+                  <div class="cancion">
+                    <p>3: “Fancy”</p>
+                    <a href="https://www.youtube.com/watch?v=kOHB85vDuow" target="_blank" rel="noopener">
+                      <img src="https://img.youtube.com/vi/kOHB85vDuow/maxresdefault.jpg" class="yt-portada">
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tarjeta: Imagine Dragons-->
+              <div class="playlist-card">
+                <div class="playlist-cabecera">
+                  <h4>Canciones de Imagine Dragons</h4>
+                  <hr>
+                </div>
+                <div class="playlist-scroll">
+                  <div class="cancion">
+                    <p>1: “Natural”</p>
+                    <a href="https://www.youtube.com/watch?v=V5M2WZiAy6k" target="_blank" rel="noopener">
+                      <img src="https://img.youtube.com/vi/V5M2WZiAy6k/maxresdefault.jpg" class="yt-portada">
+                    </a>
+                  </div>
+                   <div class="cancion">
+                    <p>2: “Enemy”</p>
+                    <a href="https://www.youtube.com/watch?v=D9G1VOjN_84" target="_blank" rel="noopener">
+                      <img src="https://img.youtube.com/vi/D9G1VOjN_84/maxresdefault.jpg" class="yt-portada">
+                    </a>
+                  </div>
+                  <div class="cancion">
+                    <p>3: “Believer”</p>
+                    <a href="https://www.youtube.com/watch?v=IhP3J0j9JmY" target="_blank" rel="noopener">
+                      <img src="https://img.youtube.com/vi/IhP3J0j9JmY/maxresdefault.jpg" class="yt-portada">
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tarjeta: Linkin Park-->
+              <div class="playlist-card">
+                <div class="playlist-cabecera">
+                  <h4>Canciones de Linkin Park</h4>
+                  <hr>
+                </div>
+                <div class="playlist-scroll">
+                  <div class="cancion">
+                    <p>1: “Numb”</p>
+                    <a href="https://www.youtube.com/watch?v=kXYiU_JCYtU&rco=1" target="_blank" rel="noopener">
+                      <img src="https://img.youtube.com/vi/kXYiU_JCYtU/maxresdefault.jpg" class="yt-portada">
+                    </a>
+                  </div>
+                   <div class="cancion">
+                    <p>2: “Crawling”</p>
+                    <a href="https://www.youtube.com/watch?v=Gd9OhYroLN0" target="_blank" rel="noopener">
+                      <img src="https://img.youtube.com/vi/Gd9OhYroLN0/maxresdefault.jpg" class="yt-portada">
+                    </a>
+                  </div>
+                  <div class="cancion">
+                    <p>3: “In The End”</p>
+                    <a href="https://www.youtube.com/watch?v=eVTXPUF4Oz4" target="_blank" rel="noopener">
+                      <img src="https://img.youtube.com/vi/eVTXPUF4Oz4/maxresdefault.jpg" class="yt-portada">
+                    </a>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Tarjeta: Livingston-->
+               <div class="playlist-card">
+                <div class="playlist-cabecera">
+                  <h4>Canciones de Livingston</h4>
+                  <hr>
+                </div>
+                <div class="playlist-scroll">
+                  <div class="cancion">
+                    <p>1: “Otherside”</p>
+                    <a href="https://www.youtube.com/watch?v=kluT2qLsqco" target="_blank" rel="noopener">
+                      <img src="https://img.youtube.com/vi/kluT2qLsqco/maxresdefault.jpg" class="yt-portada">
+                    </a>
+                  </div>
+                   <div class="cancion">
+                    <p>2: “Architect”</p>
+                    <a href="https://www.youtube.com/watch?v=0gF31eURPNA" target="_blank" rel="noopener">
+                      <img src="https://img.youtube.com/vi/0gF31eURPNA/maxresdefault.jpg" class="yt-portada">
+                    </a>
+                  </div>
+                  <div class="cancion">
+                    <p>3: “Shadow”</p>
+                    <a href="https://www.youtube.com/watch?v=h3_9NEQPUBg" target="_blank" rel="noopener">
+                      <img src="https://img.youtube.com/vi/h3_9NEQPUBg/maxresdefault.jpg" class="yt-portada">
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tarjeta: BTS-->
+               <div class="playlist-card">
+                <div class="playlist-cabecera">
+                  <h4>Canciones de BTS</h4>
+                  <hr>
+                </div>
+                <div class="playlist-scroll">
+                  <div class="cancion">
+                    <p>1: “Anpanman”</p>
+                    <a href="https://www.youtube.com/watch?v=EBf6lwkChnQ" target="_blank" rel="noopener">
+                      <img src="https://img.youtube.com/vi/EBf6lwkChnQ/maxresdefault.jpg" class="yt-portada">
+                    </a>
+                  </div>
+                   <div class="cancion">
+                    <p>2: “Dope”</p>
+                    <a href="https://www.youtube.com/watch?v=BVwAVbKYYeM" target="_blank" rel="noopener">
+                      <img src="https://img.youtube.com/vi/BVwAVbKYYeM/maxresdefault.jpg" class="yt-portada">
+                    </a>
+                  </div>
+                  <div class="cancion">
+                    <p>3: “Dynamite”</p>
+                    <a href="https://www.youtube.com/watch?v=gdZLi9oWNZg" target="_blank" rel="noopener">
+                      <img src="https://img.youtube.com/vi/gdZLi9oWNZg/maxresdefault.jpg" class="yt-portada">
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+
+               <!-- Tarjeta: Need for speed MW-->
+               <div class="playlist-card">
+                <div class="playlist-cabecera">
+                  <h4>Canciones del Need for speed MW</h4>
+                  <hr>
+                </div>
+                <div class="playlist-scroll">
+                  <div class="cancion">
+                    <p>1: “Disturbed: Decadence”</p>
+                    <a href="https://www.youtube.com/watch?v=-daTpfB-7K4" target="_blank" rel="noopener">
+                      <img src="https://img.youtube.com/vi/-daTpfB-7K4/maxresdefault.jpg" class="yt-portada">
+                    </a>
+                  </div>
+                   <div class="cancion">
+                    <p>2: “Bullet For My Valentine: Hand of Blood”</p>
+                    <a href="https://www.youtube.com/watch?v=c0SrxSMHDmE" target="_blank" rel="noopener">
+                      <img src="https://img.youtube.com/vi/c0SrxSMHDmE/maxresdefault.jpg" class="yt-portada">
+                    </a>
+                  </div>
+                  <div class="cancion">
+                    <p>3: “Avenged Sevenfold: Blinded in Chains”</p>
+                    <a href="https://www.youtube.com/watch?v=TYgxM_suaUw" target="_blank" rel="noopener">
+                      <img src="https://img.youtube.com/vi/TYgxM_suaUw/maxresdefault.jpg" class="yt-portada">
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+             <!-- Tarjeta: Cyberpunk 2077-->
+               <div class="playlist-card">
+                <div class="playlist-cabecera">
+                  <h4>Canciones de Cyberpunk 2077</h4>
+                  <hr>
+                </div>
+                <div class="playlist-scroll">
+                  <div class="cancion">
+                    <p>1: “Aleyna Moon: Fumes”</p>
+                    <a href="https://www.youtube.com/watch?v=rywmb-k-JJU" target="_blank" rel="noopener">
+                      <img src="https://img.youtube.com/vi/rywmb-k-JJU/maxresdefault.jpg" class="yt-portada">
+                    </a>
+                  </div>
+                   <div class="cancion">
+                    <p>2: “St. Aurora: Going To Heaven”</p>
+                    <a href="https://www.youtube.com/watch?v=AFgPwiSEXm4" target="_blank" rel="noopener">
+                      <img src="https://img.youtube.com/vi/OzLupOFinyI/maxresdefault.jpg" class="yt-portada">
+                    </a>
+                  </div>
+                  <div class="cancion">
+                    <p>3: “Skin On Flesh: El Tiempo”</p>
+                    <a href="https://www.youtube.com/watch?v=vEtM0DDdmb0&list=PLxVIq45osUcjkmsjsZARChQnYixUiQcbI" target="_blank" rel="noopener">
+                      <img src="https://img.youtube.com/vi/OzLupOFinyI/maxresdefault.jpg" class="yt-portada">
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tarjeta: Britney Spears-->
+               <div class="playlist-card">
+                <div class="playlist-cabecera">
+                  <h4>Canciones de Britney Spears</h4>
+                  <hr>
+                </div>
+                <div class="playlist-scroll">
+                  <div class="cancion">
+                    <p>1: “Toxic”</p>
+                    <a href="https://www.youtube.com/watch?v=LOZuxwVk7TU" target="_blank" rel="noopener">
+                      <img src="https://img.youtube.com/vi/LOZuxwVk7TU/maxresdefault.jpg" class="yt-portada">
+                    </a>
+                  </div>
+                   <div class="cancion">
+                    <p>2: “Baby One More Time”</p>
+                    <a href="https://www.youtube.com/watch?v=C-u5WLJ9Yk4" target="_blank" rel="noopener">
+                      <img src="https://img.youtube.com/vi/C-u5WLJ9Yk4/maxresdefault.jpg" class="yt-portada">
+                    </a>
+                  </div>
+                  <div class="cancion">
+                    <p>3: “Oops!...I Did It Again”</p>
+                    <a href="https://www.youtube.com/watch?v=CduA0TULnow" target="_blank" rel="noopener">
+                      <img src="https://img.youtube.com/vi/CduA0TULnow/maxresdefault.jpg" class="yt-portada">
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+                <!-- Tarjeta: Eminem-->
+               <div class="playlist-card">
+                <div class="playlist-cabecera">
+                  <h4>Canciones de Eminem</h4>
+                  <hr>
+                </div>
+                <div class="playlist-scroll">
+                  <div class="cancion">
+                    <p>1: “Lose Yourself”</p>
+                    <a href="https://www.youtube.com/watch?v=xFYQQPAOz7Y" target="_blank" rel="noopener">
+                      <img src="https://img.youtube.com/vi/_Yhyp-_hX2s/maxresdefault.jpg" class="yt-portada">
+                    </a>
+                  </div>
+                   <div class="cancion">
+                    <p>2: “Without Me”</p>
+                    <a href="https://www.youtube.com/watch?v=YVkUvmDQ3HY" target="_blank" rel="noopener">
+                      <img src="https://img.youtube.com/vi/YVkUvmDQ3HY/maxresdefault.jpg" class="yt-portada">
+                    </a>
+                  </div>
+                  <div class="cancion">
+                    <p>3: “Venom”</p>
+                    <a href="https://www.youtube.com/watch?v=8CdcCD5V-d8" target="_blank" rel="noopener">
+                      <img src="https://img.youtube.com/vi/8CdcCD5V-d8/maxresdefault.jpg" class="yt-portada">
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+               <!-- Tarjeta: Animes-->
+               <div class="playlist-card">
+                <div class="playlist-cabecera">
+                  <h4>Top openings de Anime</h4>
+                  <hr>
+                </div>
+                <div class="playlist-scroll">
+                  <div class="cancion">
+                    <p>1: Jojo's Bizarre Adventure: “Sono Chi No Sadame”</p>
+                    <a href="https://www.youtube.com/watch?v=1ZKAQzGYYSo" target="_blank" rel="noopener">
+                      <img src="https://img.youtube.com/vi/1ZKAQzGYYSo/maxresdefault.jpg" class="yt-portada">
+                    </a>
+                  </div>
+                   <div class="cancion">
+                    <p>2: Shingeki No Kyojin: “Shinzou Wo Sasageyo”</p>
+                    <a href="https://www.youtube.com/watch?v=CID-sYQNCew&list=PLnhjE0e7vZaRekYPAhmAwHL3NWwOsNcU7&index=2" target="_blank" rel="noopener">
+                      <img src="https://img.youtube.com/vi/OpaD2g6uUGI/maxresdefault.jpg" class="yt-portada">
+                    </a>
+                  </div>
+                  <div class="cancion">
+                    <p>3: Dr. Stone: “Rakuen”</p>
+                    <a href="https://www.youtube.com/watch?v=6H7AiODxnMs" target="_blank" rel="noopener">
+                      <img src="https://img.youtube.com/vi/6H7AiODxnMs/maxresdefault.jpg" class="yt-portada">
+                    </a>
+                  </div>
+                  <div class="cancion">
+                    <p>4: Tokyo Ghoul: “unravel”</p>
+                    <a href="https://www.youtube.com/watch?v=Fve_lHIPa-I" target="_blank" rel="noopener">
+                      <img src="https://img.youtube.com/vi/Fve_lHIPa-I/maxresdefault.jpg" class="yt-portada">
+                    </a>
+                  </div>
+                  <div class="cancion">
+                    <p>5: One Piece: “Hope”</p>
+                    <a href="https://www.youtube.com/watch?v=aMu34OEPqY4" target="_blank" rel="noopener">
+                      <img src="https://img.youtube.com/vi/aMu34OEPqY4/maxresdefault.jpg" class="yt-portada">
+                    </a>
+                  </div>
+                  <div class="cancion">
+                    <p>6: Fairy Tail: "Believe In Myself"</p>
+                    <a href="https://www.youtube.com/watch?v=smD9fMi-YS0" target="_blank" rel="noopener">
+                      <img src="https://img.youtube.com/vi/smD9fMi-YS0/maxresdefault.jpg" class="yt-portada">
+                    </a>
+                  </div>
+                   <div class="cancion">
+                    <p>7: Death Note: "THE WORLD"</p>
+                    <a href="https://www.youtube.com/watch?v=kNyR46eHDxE" target="_blank" rel="noopener">
+                      <img src="https://img.youtube.com/vi/kNyR46eHDxE/maxresdefault.jpg" class="yt-portada">
+                    </a>
+                  </div>
+                  <div class="cancion">
+                    <p>8: Mashle: "Bling-Bang-Bang-Born"</p>
+                    <a href="https://www.youtube.com/watch?v=mLW35YMzELE" target="_blank" rel="noopener">
+                      <img src="https://img.youtube.com/vi/mLW35YMzELE/maxresdefault.jpg" class="yt-portada">
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+        </div>
+
+         <!--------------------------------------- FIN LISTA REPRODUCCION ------------------------------------------------>
+
+         <section class="frase-con-imagen">
+            <img src="resources/imghades.png" alt="Hades" class="frase-img">
+            <blockquote class="frase-epica">“Humor is the lightning that shatters the darkness of solemnity; without it, life would be a long night without stars.” — Hades, in other words, me</blockquote>
+          </section> 
+                  
 
     </div>
     <!--------------------------------------- FIN MAJOR ------------------------------------------------>
+
+    <!--------------------------------------IMAGEN EN FULLSCREN------------------------------>
 <div class="imagen-overlay" id="imagenOverlay" onclick="cerrarImagen()">
   <img id="imagenGrande" src="">
+</div>
+ <!-------------------------------------- FIN IMAGEN EN FULLSCREN------------------------------>
+
+  <!--------------------------------------MODAL OPINIONS------------------------------>
+  <div id="opinionModal" class="modal">
+  <div class="modal-content">
+    <span class="cerrar-modal">&times;</span>
+    <img src="" class="modal-img">
+    <div class="modal-texto"></div>
+  </div>
 </div>
 
 </body>
