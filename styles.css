@@ -678,8 +678,38 @@ a:hover{
 .opinionText{
   color: white;
 }
+/*-------FUEGO EN MI FOTO ANASHE------*/
+.fuego-mobile {
+  display: none;
+}
+.fuego-pc {
+  display: block;
+}
 /*--------------------------- ESTILOS PARA MOVILES -------------------------------*/
 @media (max-width: 768px) {
+   .fuego-mobile {
+    display: block !important;
+  }
+  .fuego-pc {
+    display: none !important;
+  }
+
+   .video-container video {
+    display: none !important;
+  }
+
+  .video-container::after {
+    content: "";
+    background: url('resources/fondofuego.png') no-repeat center center;
+    background-size: cover;
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+  }
+  
+
+
+
   .opinion{
     padding: 1.3rem;
   }
