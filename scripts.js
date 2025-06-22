@@ -93,10 +93,42 @@ window.onload = function () {
     window.addEventListener("click", (e) => {
       if (e.target === modal) modal.style.display = "none";
     });
+
+
+/*--------------------------------REDUCIR CARGA DE IMAGENES DEL SIDEBAR---------------------------- */
+document.addEventListener("DOMContentLoaded", () => {
+  const sidebar = document.querySelector('.sidebar');
+  const toggle = document.querySelector('.sidebar-toggle');
+  const imgs = sidebar.querySelectorAll('img');
+
+  // Guardar src real y removerlos al principio (en mobil)
+  if (window.innerWidth <= 768) {
+    imgs.forEach(img => {
+      if (img.src) {
+        img.dataset.src = img.src;
+        img.removeAttribute('src');
+      }
+    });
+  }
+
+  toggle.addEventListener('click', () => {
+    sidebar.classList.toggle('visible');
+
+    // Solo cargar imágenes si el sidebar se está mostrando
+    if (sidebar.classList.contains('visible')) {
+      imgs.forEach(img => {
+        if (!img.src && img.dataset.src) {
+          img.src = img.dataset.src;
+        }
+      });
+    }
+  });
+});
+
   };
 
 
-
+/*------------AGREGAR LAZY A TODAS LAS IMG ----------------------- */
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll('img').forEach(img => {
     if (!img.hasAttribute('loading')) {
@@ -104,3 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+
+
+
