@@ -170,7 +170,7 @@ a:hover{
 /*-----FIN FOTO PERFIL CON CIRCULO DE FUEGO-----*/
 .perfil-nombre {
     font-size: 2rem;
-  color: rgb(192, 0, 0);
+  color: darkred;
   animation: fuegoTexto 1s infinite alternate;
 }
 .icon{
