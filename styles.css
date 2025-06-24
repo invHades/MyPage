@@ -451,7 +451,7 @@ a:hover{
 }
 
 /*-------------------------------- GALERIA -------------------------------*/
-.carrusel, .opinionContainer {
+.carrusel {
   display: flex;
   gap: 1rem;
   overflow-x: auto;
@@ -460,7 +460,7 @@ a:hover{
   -webkit-overflow-scrolling: touch;
 }
 
-.slide, .opinion {
+.slide {
   flex: 0 0 300px;
   max-height: 400px;
   scroll-snap-align: start;
@@ -570,7 +570,7 @@ a:hover{
   color: wheat;
 }
 
-.playlist-fila {
+.playlist-fila, .opinionContainer {
   display: flex;
   flex-direction: row;
   gap: 1rem;
@@ -580,7 +580,7 @@ a:hover{
   -webkit-overflow-scrolling: touch;
 }
 
-.playlist-card {
+.playlist-card, .opinion {
   background-color: #1a1a1a;
   border-radius: 10px;
   border: 2px solid red;
@@ -599,7 +599,7 @@ a:hover{
   text-align: center;
 }
 
-.playlist-scroll {
+.playlist-scroll, .opinionText {
   flex-grow: 1;
   overflow-y: auto;
   padding-right: 0.5rem;

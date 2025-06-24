@@ -45,10 +45,8 @@ document.addEventListener("DOMContentLoaded", function () {
 /* ----------------------------------- FIN SIDEBAR TOGGLE ---------------------------------------- */
 
 /* ----------------------------------- TEXTO QUE SE ESCRIBE SOLO ---------------------------------------- */
-  const texto = `Soy Santiago. A veces programador, escritor, casi siempre con la cabeza en otro mundo. Me inspiro en mitos griegos, animes, música de todos los universos, y ese caos de ideas que me define.
-            Lo que hago ya sea escribir, codificar o dibujar. Lo hago porque me gusta, porque me nace, y porque me divierte construir cosas que tienen un poco de mí en cada línea.`;
+  const texto = `Soy Santiago. Me gusta crear cosas como programas, paginas, historias, dibujos, videos, etc. Cada cosa que creo lleva algo de mí: una idea, una emoción, una parte de lo que soy. Mi objetivo es simple —hacer que lo que hago conecte, que quien lo vea sienta algo, aunque sea por un segundo.`;
 let index = 0;
-const sonido = document.getElementById("typeMachine");
 
 function escribirTexto() {
   const elemento = document.getElementById("bio-text");
@@ -136,7 +134,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-
 
 
 
