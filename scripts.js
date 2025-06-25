@@ -78,10 +78,13 @@ window.onload = function () {
     document.querySelectorAll(".opinion").forEach(op => {
       op.addEventListener("click", () => {
         const imgSrc = op.querySelector("img").src;
-        const parrafos = Array.from(op.querySelectorAll("p")).map(p => `<p>${p.innerHTML}</p>`).join("");
+        const textoCompleto = op.querySelector(".opinionText").innerHTML;
+        const rating = op.querySelector(".rating");
+        const ratingHTML = rating ? rating.innerHTML : "";
+
 
         modalImg.src = imgSrc;
-        modalTexto.innerHTML = parrafos;
+        modalTexto.innerHTML = textoCompleto;
         modal.style.display = "block";
       });
     });
@@ -123,7 +126,29 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-  };
+
+
+
+function mostrarRating(opinionEl, cantidad, imgLlena, imgVacia) {
+  const contenedor = opinionEl.querySelector(".rating");
+  contenedor.innerHTML = "Calificacion: ";  
+
+  for (let i = 0; i < 5; i++) {
+    const img = document.createElement("img");
+    img.src = i < cantidad ? imgLlena : imgVacia;
+    img.alt = "valoración";
+    img.style.width = "28px";
+    img.style.marginRight = "4px";
+    contenedor.appendChild(img);
+  }
+}
+
+document.querySelectorAll(".opinion").forEach(op => {
+  const calificacion = parseInt(op.dataset.rating);
+  mostrarRating(op, calificacion, "resources/greekhelmet.svg", "resources/greekhelmet2.svg");
+});
+
+  }; /*Cierre window.onload */
 
 
 /*------------AGREGAR LAZY A TODAS LAS IMG ----------------------- */
@@ -134,6 +159,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-
 
 
