@@ -688,8 +688,53 @@ a:hover{
 .fuego-pc {
   display: block;
 }
+/*-------MOBILE BAR------*/
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px; 
+  background-color: #1a1a1a;
+  border-top: 2px solid red;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 999;
+  padding: 0 5px;
+}
+
+.bottom-bar a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  font-size: 11px;
+}
+
+.bottom-bar .nav-icon {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 2px;
+}
+
+@media (min-width: 769px) {
+  .bottom-bar {
+    display: none;
+  }
+}
+
 /*--------------------------- ESTILOS PARA MOVILES -------------------------------*/
 @media (max-width: 768px) {
+  .sections{
+    display: none;
+  }
+  .mobile-bar{
+    display: block;
+    z-index: 1000;
+    width: 100%;
+    height: 1vh;
+  }
    .fuego-mobile {
     display: block !important;
   }
