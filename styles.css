@@ -723,7 +723,212 @@ a:hover{
     display: none;
   }
 }
+/*--------------------------- SECCION DE COMENTARIOS -------------------------------*/
+/* Icono general en títulos */
+.icon-comment {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  margin-right: 8px;
+  border-radius: 50%;
+}
 
+/* Cada comentario */
+.comment {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background-color: rgba(255,255,255,0.05);
+  padding: 0.75rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  border-left: 4px solid red;
+}
+#comments{
+  flex-shrink: 0; 
+  padding-bottom: 5rem;
+}
+.comments-container {
+  max-height: 70vh; 
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+/* Imagen circular tipo avatar */
+.comment-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.comment-content {
+  max-height: 350px; 
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+/* Contenido del comentario */
+.comment-content p {
+  margin: 0.4rem 0 0;
+  color: wheat;
+  line-height: 1.4;
+}
+
+.comment-content strong {
+  color: orange;
+}
+
+/* Botón para abrir modal */
+.comment-button {
+  background-color: darkred;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+  margin: 20px;
+}
+
+.comment-button:hover {
+  transform: scale(1.05);
+}
+/*Fecha de los comentarios*/
+.comment-timestamp {
+  font-size: 0.75rem;
+  color: gray;
+  display: block;
+  margin-top: 0.3rem;
+  text-align: right;
+  opacity: 0.8;
+}
+/*-----MODAL DE COMENTARIOS-----*/
+.comment-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content2 {
+  position: relative;
+  background: #1a1a1a;
+  padding: 1rem 1.5rem;
+  border-radius: 15px;
+  border: 2px solid red;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  color: wheat;
+}
+
+.modal-content2 h3 {
+  margin-bottom: 1rem;
+}
+
+.cerrar-modal2 {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white;
+}
+
+
+
+.modal-content2 input,
+.modal-content2 textarea {
+  width: 100%;
+  padding: 0.6rem;
+  margin: 0.5rem 0;
+  border-radius: 8px;
+  border: none;
+  background-color: #2b2b2b;
+  color: white;
+}
+
+.modal-content2 textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.modal-content2 button {
+  background: darkred;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+}
+/*MENSAJE DE ALERTA*/
+#mensaje-global {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  z-index: 999999; 
+  display: flex;
+  justify-content: center;
+}
+
+#mensaje {
+  margin-top: 20px;
+  background: rgba(34, 34, 34, 0.95);
+  border: 2px solid red;
+  color: white;
+  padding: 20px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#mensaje.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#mensaje.oculto {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+/*LIKES*/
+.hades-like {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 6px;
+}
+.avatar-hades {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+.heart-icon {
+  font-size: 18px;
+  transform: translateX(-50%);
+}
+.like-button {
+  margin-top: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+.like-button:hover{
+  background: none;
+}
 /*--------------------------- ESTILOS PARA MOVILES -------------------------------*/
 @media (max-width: 768px) {
   .sections{

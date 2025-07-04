@@ -7,9 +7,18 @@
     <link rel="icon" type="image/png" href="resources/hadessymbol.svg">
     <script src="historias.js" defer></script>
     <script src="scripts.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
+
+
     <title>Hades</title>
 </head>
 <body>
+  
+  <div id="mensaje-global">
+    <div id="mensaje" class="oculto"></div>
+  </div>
     
   <audio id="clickSound" src="resources/alert.wav" preload="auto"></audio>
 
@@ -50,11 +59,12 @@
         <div class="sections">
             <h3 style="color: white;"><img src="resources/greekpilar.svg" class="icon-svg2"> Sections <img src="resources/greekpilar.svg" class="icon-svg2"></h3>
             <a href="#info" onclick="reproducirSonido()" ><img src="resources/info.svg" class="icon-svg"> <b>Info</b> </a> <br>
-            <a href="#galeria" onclick="reproducirSonido()" ><img src="resources/galler.svg" class="icon-svg"> <b>Galeria</b> </a> <br>
+            <a href="#galeria" onclick="reproducirSonido()" ><img src="resources/galler.svg" class="icon-svg"> <b>Gallery</b> </a> <br>
             <a href="#youtubeVideos" onclick="reproducirSonido()" ><img src="resources/youtube.svg" class="icon-svg"> <b>Videos de YouTube</b> </a> <br>
             <a href="#wattpad" onclick="reproducirSonido()" ><img src="resources/wattpad.svg" class="icon-svg"> <b>Wattpad</b> </a> <br>
             <a href="#opinions" onclick="reproducirSonido()" ><img src="resources/thought.svg" class="icon-svg"> <b>Opinions</b> </a> <br>
             <a href="#playlist" onclick="reproducirSonido()" ><img src="resources/music.svg" class="icon-svg"> <b>playlist</b> </a> <br>
+            <a href="#comments" onclick="reproducirSonido()" ><img src="resources/comment.svg" class="icon-svg"> <b>Comments</b> </a> <br>
         </div>
     </div>
     <div class="sidebar-toggle" onclick="toggleSidebar()">☰</div>
@@ -71,7 +81,7 @@
         <!--------------------------------------- INFO ------------------------------------------------>
         <div class="portfolio-panel" id="info">
           <div class="info-top">
-            <h3 style="color: wheat; font-size: 2rem;">¿Quién soy?</h3> 
+            <h3 style="color: wheat; font-size: 2rem;">About me:</h3> 
             <hr style="width: 100%;">
           </div>
 
@@ -81,6 +91,8 @@
              
             <ul class="datos-personales">
                 <li><b><img src="resources/bow.webp" class="icon-svg2"> Hobbies:</b> Programar, crear jueguitos, escribir historias locas en Wattpad, subir edits a YouTube, cantar a todo pulmon cuando tengo casa sola, hablar con mi gato o conmigo mismo y romper el CSS sin querer.</li> <br>
+                <li><b><img src="resources/bow.webp" class="icon-svg2"> Gustos:</b> A pesar de que me gustan los juegitos y estar en la computadora, tambien me gustan los deportes. Fuchibol, basket, voley, tenis, etc. Tengo la suerte de no ser un gordo teton :D.</li> <br>
+                <li><b><img src="resources/bow.webp" class="icon-svg2"> Ejercicio:</b> Siempre hice un tiempo, luego dejaba y asi. Pero actualmente hago casi todos los dias algo de ejercicio en casa. No quiero llegar a los 40 y no poder ni agacharme o levantar una pierna.</li> <br>
                 <li><b><img src="resources/bow.webp" class="icon-svg2">  Nivel de caos creativo:</b> Altisimo y siempre en llamas. Me encanta crear cosas (por si no te diste cuenta) ya sea programando, escribiendo o editando, crear cualquier cosa que me haga feliz, me de satisfaccion o me de risa. Aun que mas que nada lo que creo es para mi, tambien me gustaria que la gente lo viera.</li> <br>
                 <li><b><img src="resources/bow.webp" class="icon-svg2">  Dato random:</b> Tengo muchos proyectos personales sin terminar. (un juego en unity pixel-art, varias historias en Wattpad, dibujos en hojas, comics dibujados sin terminar, paginas y programas).</li> <br>
                 <li><b><img src="resources/bow.webp" class="icon-svg2">  Dato random2:</b> En un dia de aburrimiento hice un server de discord porque si (con muchos canales, bots, roles, permisos, etc) te puedes unir clickeando <a href="https://discord.gg/RaRRGre8By" target="_blank" style="color: red;" onclick="reproducirSonido()" >aqui</a> mismo para que veas la basura de server que hice xd (por cierto hay un bot de Maluma).</li><br>
@@ -202,7 +214,7 @@
     <!--------------------------------------- YOUTUBE ------------------------------------------------>
     <div class="portfolio-panel youtube-fixed" id="youtubeVideos">
       <div class="youtubeHeader">
-        <h3 style="color: wheat;"><img src="resources/youtube.svg" class="icon-svg"> <b>Mis videos de YouTube</b></h3><hr style="width: 100%;">
+        <h3 style="color: wheat;"><img src="resources/youtube.svg" class="icon-svg"> <b>My Youtube videos</b></h3><hr style="width: 100%;">
       </div>
         <div class="youtube-box">
             <iframe  src="https://www.youtube.com/embed/kYNw8q9VfJM?si=OMQzT5kB4wOl6t2A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -237,7 +249,7 @@
 
         <!--------------------------------------- WATTPAD ------------------------------------------------>
         <div class="portfolio-panel" id="wattpad">
-                <h3 style="color: wheat;"><img src="resources/wattpad.svg" class="icon-svg">Historias Wattpad</h3><br><h4 style="color: orange;">Hay muchas mas en proceso...</h4><hr style="width: 100%;">
+                <h3 style="color: wheat;"><img src="resources/wattpad.svg" class="icon-svg">Wattpad stories</h3><br><h4 style="color: orange;">Hay muchas mas en proceso...</h4><hr style="width: 100%;">
                 <div class="wattpad-box">
                     <div id="historiaCatalogo" class="catalogo-list">
                     <!-- Historias se llenan con JS -->
@@ -743,6 +755,26 @@
             <blockquote style="color: red;">"Si quieres una pagina con fondo de fuego difuminado y unos pilares, yo soy el indicado".</blockquote><br><br>
           </section> 
                   
+          <!--------------------------------------- SECCION COMENTARIOS ------------------------------------------------>
+
+          <div class="portfolio-panel" id="comments">
+            
+            <div class="comment-top">
+            <h2 style="color: wheat;"><img src="resources/comment.svg" class="icon-svg"> Sección de Comentarios</h2>
+            <p style="color: wheat;">Puedes calificar la calidad de mi pagina o dejar una sugerencia como que la borre.</p>
+            <hr style="width: 100%;">
+             <button class="comment-button" onclick="abrirModal()"><img src="resources/commenticon.svg" class="icon-svg">Comentar</button>
+             <hr style="width: 100%;">
+             </div>
+
+             <div class="comments-container" id="commentList">
+           
+
+           
+           </div>
+          </div>
+
+          <!--------------------------------------- FIN SECCION COMENTARIOS ------------------------------------------------>
 
     </div>
     <!--------------------------------------- FIN MAJOR ------------------------------------------------>
@@ -763,7 +795,21 @@
 </div>
   <!--------------------------------------FIN MODAL OPINIONS------------------------------>
 
-    <!--------------------------------------Mobile Bar------------------------------>
+  <!--------------------------------------MODAL COMMENTS------------------------------>
+  <div id="commentModal" class="comment-modal">
+  <div class="modal-content2">
+    <span class="cerrar-modal2" onclick="cerrarModal()">×</span>
+    <h3> Dejá tu comentario</h3>
+
+    <input type="text" id="nombreUsuario" placeholder="Nombre visible" maxlength="20">
+    <textarea id="comentarioTexto" placeholder="Tu mensaje..." maxlength="200"></textarea>
+
+    <button onclick="enviarComentario()"><img src="resources/commenticon.svg" class="icon-svg">Comentar</button>
+  </div>
+</div>
+  <!--------------------------------------FIN MODAL COMMENTS------------------------------>
+
+    <!--------------------------------------MOBILE BAR------------------------------>
     <div class="bottom-bar">
   <a href="#info" onclick="reproducirSonido()">
     <img src="resources/info.svg" class="nav-icon">
@@ -789,7 +835,90 @@
     <img src="resources/music.svg" class="icon-svg"> 
     <span>Playlist</span>
   </a>
-  
+  <a href="#comments" onclick="reproducirSonido()" ><img src="resources/comment.svg" class="icon-svg"> <b>Comments</b> </a> <br>
 </div>
+<!--------------------------------------FIN MOBILE BAR------------------------------>
+
+<script>
+  const firebaseConfig = {
+  apiKey: "AIzaSyAYP_U69O1sIcLu6gX81_gC0KSI-LVNs8c",
+  authDomain: "comments-f4b6b.firebaseapp.com",
+  databaseURL: "https://comments-f4b6b-default-rtdb.firebaseio.com",
+  projectId: "comments-f4b6b",
+  storageBucket: "comments-f4b6b.firebasestorage.app",
+  messagingSenderId: "614492524973",
+  appId: "1:614492524973:web:4b29ca4e72ba4364865124"
+};
+
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.database();
+
+  db.ref("comentarios").on("child_added", function(snapshot) {
+  const data = snapshot.val();
+  const comentarioId = snapshot.key;
+  const esPerryAdmin = localStorage.getItem("esPerryAdmin") === "true";
+
+  // Crear estructura visual
+  const commentDiv = document.createElement("div");
+  commentDiv.classList.add("comment");
+
+  const img = document.createElement("img");
+  img.src = "resources/skull.png";
+  img.classList.add("comment-icon");
+
+  const contentDiv = document.createElement("div");
+  contentDiv.classList.add("comment-content");
+
+  const autor = document.createElement("strong");
+  autor.textContent = data.nombre || "Anónimo";
+
+  const mensaje = document.createElement("p");
+  mensaje.textContent = data.mensaje || "";
+
+  const fecha = document.createElement("small");
+  fecha.textContent = ` ${data.fecha || ""}`;
+  fecha.classList.add("comment-timestamp");
+
+  contentDiv.appendChild(autor);
+  contentDiv.appendChild(mensaje);
+  contentDiv.appendChild(fecha);
+
+  // Mostrar visual de like si fue activado por Perry
+  if (data.likedBy === "PerryHades") {
+    const likeVisual = document.createElement("div");
+    likeVisual.classList.add("hades-like");
+
+    const imgHades = document.createElement("img");
+    imgHades.src = "resources/imghades.png";
+    imgHades.classList.add("avatar-hades");
+
+    const heart = document.createElement("span");
+    heart.innerHTML = `<img src="resources/heart.svg" class="icon-svg">`;
+    heart.classList.add("heart-icon");
+
+    likeVisual.appendChild(imgHades);
+    likeVisual.appendChild(heart);
+    contentDiv.appendChild(likeVisual);
+  }
+
+  // Mostrar botón solo en modo Perry
+  if (esPerryAdmin) {
+    const botonLike = document.createElement("button");
+    botonLike.innerHTML = `<img src="resources/heart.svg" class="icon-svg">`;
+    botonLike.classList.add("like-button");
+    botonLike.onclick = () => toggleLikePerry(comentarioId);
+    contentDiv.appendChild(botonLike);
+  }
+
+  commentDiv.appendChild(img);
+  commentDiv.appendChild(contentDiv);
+
+  document.getElementById("commentList").appendChild(commentDiv);
+});
+
+
+</script>
+
+
 </body>
 </html>
