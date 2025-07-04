@@ -254,95 +254,95 @@ async function enviarComentario() {
     };
 
     db.ref("comentarios").push(nuevoComentario).then(ref => {
-  const comentarioId = ref.key;
+//   const comentarioId = ref.key;
 
-  const fecha = document.createElement("small");
-  fecha.textContent = ` ${fechaFormateada}`;
-  fecha.classList.add("comment-timestamp");
+//   const fecha = document.createElement("small");
+//   fecha.textContent = ` ${fechaFormateada}`;
+//   fecha.classList.add("comment-timestamp");
 
-  const commentDiv = document.createElement("div");
-  commentDiv.classList.add("comment");
+//   const commentDiv = document.createElement("div");
+//   commentDiv.classList.add("comment");
 
-  const img = document.createElement("img");
-  img.src = "resources/skull.png";
-  img.classList.add("comment-icon");
+//   const img = document.createElement("img");
+//   img.src = "resources/skull.png";
+//   img.classList.add("comment-icon");
 
-  const contentDiv = document.createElement("div");
-  contentDiv.classList.add("comment-content");
+//   const contentDiv = document.createElement("div");
+//   contentDiv.classList.add("comment-content");
 
-  const autor = document.createElement("strong");
-  autor.textContent = nombre;
+//   const autor = document.createElement("strong");
+//   autor.textContent = nombre;
 
-  const mensajeElemento = document.createElement("p");
-  mensajeElemento.textContent = comentario;
+//   const mensajeElemento = document.createElement("p");
+//   mensajeElemento.textContent = comentario;
 
-  contentDiv.appendChild(autor);
-  contentDiv.appendChild(mensajeElemento);
-  contentDiv.appendChild(fecha);
+//   contentDiv.appendChild(autor);
+//   contentDiv.appendChild(mensajeElemento);
+//   contentDiv.appendChild(fecha);
 
-  const esPerryAdmin = localStorage.getItem("esPerryAdmin") === "true";
-  if (esPerryAdmin) {
-    const botonLike = document.createElement("button");
-    botonLike.innerHTML= `<img src="resources/heart.svg" class="icon-svg">`;
-    botonLike.classList.add("like-button");
-    botonLike.onclick = () => toggleLikePerry(comentarioId);
-    contentDiv.appendChild(botonLike);
-  }
+//   const esPerryAdmin = localStorage.getItem("esPerryAdmin") === "true";
+//   if (esPerryAdmin) {
+//     const botonLike = document.createElement("button");
+//     botonLike.innerHTML= `<img src="resources/heart.svg" class="icon-svg">`;
+//     botonLike.classList.add("like-button");
+//     botonLike.onclick = () => toggleLikePerry(comentarioId);
+//     contentDiv.appendChild(botonLike);
+//   }
 
-  commentDiv.appendChild(img);
-  commentDiv.appendChild(contentDiv);
-  document.getElementById("commentList").appendChild(commentDiv);
+//   commentDiv.appendChild(img);
+//   commentDiv.appendChild(contentDiv);
+//   document.getElementById("commentList").appendChild(commentDiv);
 
-  document.getElementById("nombreUsuario").value = "";
-  document.getElementById("comentarioTexto").value = "";
-  cerrarModal();
-});
+//   document.getElementById("nombreUsuario").value = "";
+//   document.getElementById("comentarioTexto").value = "";
+//   cerrarModal();
+// });
 
-    // Crear visual de comentario
-    const fecha = document.createElement("small");
-    fecha.textContent = ` ${fechaFormateada}`;
-    fecha.classList.add("comment-timestamp");
+//     // Crear visual de comentario
+//     const fecha = document.createElement("small");
+//     fecha.textContent = ` ${fechaFormateada}`;
+//     fecha.classList.add("comment-timestamp");
 
-    const commentDiv = document.createElement("div");
-    commentDiv.classList.add("comment");
+//     const commentDiv = document.createElement("div");
+//     commentDiv.classList.add("comment");
 
-    const img = document.createElement("img");
-    img.src = "resources/skull.png";
-    img.classList.add("comment-icon");
+//     const img = document.createElement("img");
+//     img.src = "resources/skull.png";
+//     img.classList.add("comment-icon");
 
-    const contentDiv = document.createElement("div");
-    contentDiv.classList.add("comment-content");
+//     const contentDiv = document.createElement("div");
+//     contentDiv.classList.add("comment-content");
 
-    const autor = document.createElement("strong");
-    autor.textContent = nombre;
+//     const autor = document.createElement("strong");
+//     autor.textContent = nombre;
 
-    const mensajeElemento = document.createElement("p");
-    mensajeElemento.textContent = comentario;
+//     const mensajeElemento = document.createElement("p");
+//     mensajeElemento.textContent = comentario;
 
-    contentDiv.appendChild(autor);
-    contentDiv.appendChild(mensajeElemento);
-    contentDiv.appendChild(fecha);
-    commentDiv.appendChild(img);
+//     contentDiv.appendChild(autor);
+//     contentDiv.appendChild(mensajeElemento);
+//     contentDiv.appendChild(fecha);
+//     commentDiv.appendChild(img);
 
-    const esPerryAdmin = localStorage.getItem("esPerryAdmin") === "true";
-if (esPerryAdmin) {
-  const botonLike = document.createElement("button");
-  botonLike.innerHTML= `<img src="resources/heart.svg" class="icon-svg">`;
-  botonLike.classList.add("like-button");
-  botonLike.onclick = () => toggleLikePerry(/* ID del comentario */);
-  contentDiv.appendChild(botonLike);
-}
+//     const esPerryAdmin = localStorage.getItem("esPerryAdmin") === "true";
+// if (esPerryAdmin) {
+//   const botonLike = document.createElement("button");
+//   botonLike.innerHTML= `<img src="resources/heart.svg" class="icon-svg">`;
+//   botonLike.classList.add("like-button");
+//   botonLike.onclick = () => toggleLikePerry(/* ID del comentario */);
+//   contentDiv.appendChild(botonLike);
+// }
 
 
-    commentDiv.appendChild(contentDiv);
+//     commentDiv.appendChild(contentDiv);
 
-    document.getElementById("commentList").appendChild(commentDiv);
+//     document.getElementById("commentList").appendChild(commentDiv);
 
     document.getElementById("nombreUsuario").value = "";
     document.getElementById("comentarioTexto").value = "";
     cerrarModal();
   });
-}
+})}
 
 /*----------MENSAJE ALERTA--------------- */
 /*mostrar mensaje*/ 
